@@ -50,13 +50,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int usuarioMostrar = Integer.parseInt(binding.editTextNumber.getText().toString()) -1;
-                if (usuarioMostrar >= 0 && usuarioMostrar < listaUsers.size()){
-                    binding.txtNombre.setText(listaUsers.get(usuarioMostrar).getName());
-                    binding.txtUsername.setText(listaUsers.get(usuarioMostrar).getUsername());
-                    binding.txtEmail.setText(listaUsers.get(usuarioMostrar).getEmail());
-                }else {
-                    Toast.makeText(MainActivity.this, "Usuario inexistente", Toast.LENGTH_SHORT).show();
-                }
+
+                    if ((usuarioMostrar >= 0 && usuarioMostrar < listaUsers.size())) {
+                        binding.txtNombre.setText(listaUsers.get(usuarioMostrar).getName());
+                        binding.txtUsername.setText(listaUsers.get(usuarioMostrar).getUsername());
+                        binding.txtEmail.setText(listaUsers.get(usuarioMostrar).getEmail());
+                    } else {
+                        Toast.makeText(MainActivity.this, "Usuario inexistente", Toast.LENGTH_SHORT).show();
+                    }
+
             }
         });
 
